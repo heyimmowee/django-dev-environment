@@ -41,11 +41,7 @@ ADD id_rsa $WORKDIR.ssh/id_rsa
 RUN mkdir $WORKDIR.virtualenvs
 
 # Give all the rights to dev from its home dir
-RUN chown -R dev:dev /home/dev/ 
-
-# Start required servicesh
-RUN service postgresql start
-RUN service ssh start
+RUN chown -R dev:dev /home/dev/
 
 # Open VM port 8000 for runserver django cmd
 EXPOSE 8000
